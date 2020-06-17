@@ -18,6 +18,7 @@
     "checkout": "Checkout",
     "qty": "Qty",
     "subtotal": "Subtotal",
+    "total": "Total",
     "items": "Items",
     "addToCart": "Add to cart"
   },
