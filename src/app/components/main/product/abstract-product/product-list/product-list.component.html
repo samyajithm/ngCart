@@ -1,0 +1,20 @@
+<mat-list-item class="margin-top-10" *ngFor="let product of productList">
+  <div>
+    <div class="float-left">
+      <img mat-card-sm-image [src]="getSanitizedImg(product.image)" alt="{{'altphoto' | translate}} {{product?.name}}">
+    </div>
+    <div class="float-left margin-left-20 margin-right-20">
+      <h4 mat-line class="font-weight-light ellipsis-truncate margin-bottom-0">{{product.name}}</h4>
+      <p mat-line class="margin-bottom-0 price">{{getCurrency(product.price)}}</p>
+      <p mat-line *ngIf="isCart">{{'cart.qty' | translate}}: {{product.quantityInCart}}
+        <mat-icon class="delete select" (click)="deleteCartItem(product)">delete</mat-icon>
+      </p>
+    </div>
+  </div>
+</mat-list-item>
+
+<mat-list-item class="margin-top-10" *ngIf="!productList || productList && productList.length <= 0">
+  <div>
+    <p mat-line *ngIf="!isCart">{{'noRecord' | translate}}
+  </div>
+</mat-list-item>

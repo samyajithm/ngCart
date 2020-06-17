@@ -1,0 +1,11 @@
+@import "../../../../../styles/variables";
+
+.delete {
+  font-size: map_get($fontSize, deleteIcon);
+  float: right;
+  padding: 2px 0 0 9px;
+}
+
+.delete:hover {
+  color: map_get($ngCart-warn, 600);
+}

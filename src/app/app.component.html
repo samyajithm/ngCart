@@ -1,0 +1,20 @@
+<mat-sidenav-container class="ngCart-main" autosize>
+
+  <mat-sidenav #sidenav mode="over" closed>
+    <!--<app-sidebar></app-sidebar>-->
+  </mat-sidenav>
+  <mat-sidenav-content [@fadeAnimation]="getRouterOutletState(routerOutlet)" role="main">
+    <div class="toolbar">
+      <app-header></app-header>
+    </div>
+    <div class="main">
+      <app-loading></app-loading>
+      <router-outlet #routerOutlet="outlet"></router-outlet>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

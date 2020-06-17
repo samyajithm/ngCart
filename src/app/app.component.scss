@@ -1,0 +1,31 @@
+@import "styles/variables";
+
+.ngCart-main, .container {
+  height: 100%;
+  position: relative;
+  //background-color: lightgrey;
+}
+
+.toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main {
+  position: relative;
+  /* calculate remaining screenSize for main*/
+  min-height: calc(100% - #{map_get($height, footer)} - #{map_get($height, toolbar)});
+  background-color: white;
+  display: flex;
+}
+
+.footer {
+  background-color: lightgrey;
+  @include center();
+  min-height: map_get($height, footer);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

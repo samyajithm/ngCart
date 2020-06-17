@@ -1,0 +1,23 @@
+<mat-card class="product-card">
+  <mat-card-header>
+    <mat-card-title>{{product?.name}}</mat-card-title>
+    <mat-card-subtitle class="price">{{getCurrency(product?.price)}}</mat-card-subtitle>
+    <span class="spacer"></span>
+    <mat-icon class="select padding-top-3" aria-hidden="false" color="warn" *ngIf="isFavorite; else favoriteElse"
+              (click)="updateFav(product.id, false)">favorite
+    </mat-icon>
+    <ng-template #favoriteElse>
+      <mat-icon class="select padding-top-3" aria-hidden="false" (click)="updateFav(product.id, true)">favorite_border
+      </mat-icon>
+    </ng-template>
+  </mat-card-header>
+  <img mat-card-image [src]="getSanitizedImg(product.image)" alt="{{'altPhoto' | translate}} {{product?.name}}">
+  <mat-card-content>
+    <p class="ellipsis-truncate" matTooltip="{{product?.description}}">
+      {{product?.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="product-actions">
+    <button mat-button color="primary" class="select" (click)="addToCart()">{{'cart.addToCart' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

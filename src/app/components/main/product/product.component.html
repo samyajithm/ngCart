@@ -1,0 +1,9 @@
+<ng-container *ngIf="gridView">
+  <div class="product-div col" *ngFor="let product of latestProductList | async">
+    <app-product-grid [product]="product"></app-product-grid>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!gridView">
+  <app-product-list [productList]="productsList" [isCart]="isCart"></app-product-list>
+</ng-container>

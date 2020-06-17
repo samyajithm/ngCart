@@ -1,0 +1,10 @@
+<div *ngIf="!loading" class="favorite-popover" (click)="$event.stopPropagation()">
+  <mat-list>
+    <h3 mat-subheader>{{'toolbar.wishlist' | translate}}</h3>
+    <mat-divider></mat-divider>
+    <app-product [gridView]="false" [productsList]="productsInFavorite" [isCart]="false"></app-product>
+  </mat-list>
+</div>
+<div *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>

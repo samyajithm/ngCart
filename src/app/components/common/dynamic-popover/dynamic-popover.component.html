@@ -1,0 +1,11 @@
+<div class="select padding-top-6"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger"
+     (mouseenter)="mouseEnter(menuTrigger)">
+  <ng-content select="[menu]"></ng-content>
+</div>
+
+<mat-menu #menu="matMenu"
+          [overlapTrigger]="false">
+  <ng-content select="[menuContent]"></ng-content>
+</mat-menu>

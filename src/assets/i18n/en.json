@@ -1,0 +1,47 @@
+{
+  "appName": "ngCart",
+  "toolbar": {
+    "wishlist": "Wish List",
+    "cart": "Cart"
+  },
+  "title": {
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "subtitle": {
+    "shop": "Welcome to ngCart",
+    "about": "Welcome to About Page",
+    "contact": "Welcome to Contact Page"
+  },
+  "cart": {
+    "checkout": "Checkout",
+    "qty": "Qty",
+    "subtotal": "Subtotal",
+    "items": "Items",
+    "addToCart": "Add to cart"
+  },
+  "notify": {
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "snackBarError": {
+    "fetchProduct": "Error Fetching Products",
+    "cartAdd": "Couldn't add item to cart: {{productName}}",
+    "operation": "Operation Failed"
+  },
+  "snackBarSuccess": {
+    "cartAdd": "Item added to cart: {{productName}}",
+    "checkout": "Order placed successfully"
+  },
+  "snackBarInfo":{
+    "maxQuant": "'{{productName}}' has limit of Qty: {{quantity}} in cart"
+  },
+  "snackBarTitle": {
+    "maxQuant": "Maximum Limit Reached"
+  },
+  "altPhoto": "Photo of",
+  "noRecord": "No Items"
+}

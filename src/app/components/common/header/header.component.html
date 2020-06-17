@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <img class="icon-image select" src="./assets/images/cart192.png" (click)="navigate()">
+  <span class="padding-left-10 select" (click)="navigate()">{{'appName' | translate}}</span>
+  <span class="spacer"></span>
+
+  <app-dynamic-popover>
+    <mat-icon menu [matBadge]="favoriteCount > 0 ? favoriteCount : null" matBadgeColor="accent"
+              class="toolbar-icon select" aria-hidden="false">favorite</mat-icon>
+    <app-favorite-popover menuContent></app-favorite-popover>
+  </app-dynamic-popover>
+
+  <app-dynamic-popover>
+    <mat-icon menu [matBadge]="cartCount > 0 ? cartCount : null" matBadgeColor="accent"
+              class="toolbar-icon select" aria-hidden="false">shopping_cart
+    </mat-icon>
+    <app-cart-popover-view menuContent></app-cart-popover-view>
+  </app-dynamic-popover>
+</mat-toolbar>
