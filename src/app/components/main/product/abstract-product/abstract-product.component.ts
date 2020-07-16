@@ -74,7 +74,7 @@ export class AbstractProductComponent implements OnInit, OnChanges, OnDestroy {
   * */
   updateCart(product: Product, add: boolean) {
     this.cartList = this.ngCartService.getStoredList('cartList');
-    const index = this.cartList.findIndex(item => item.id == product.id);
+    const index = this.cartList.findIndex(item => item._id == product._id);
     let item = this.cartList[index];
 
     if (index >= 0) {
@@ -110,7 +110,7 @@ export class AbstractProductComponent implements OnInit, OnChanges, OnDestroy {
       if (add) {
         /* Add new product to cart*/
         this.cartList.push({
-          id: product.id,
+          _id: product._id,
           quantity: 1
         });
 

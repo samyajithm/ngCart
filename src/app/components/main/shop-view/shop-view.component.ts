@@ -52,8 +52,8 @@ export class ShopViewComponent implements OnInit, OnDestroy {
       }))
       .subscribe((result: ProductResponse) => {
 
-        if (result && result.data) {
-          this.productsList = result.data;
+        if (result && result.count > 0 && result.products.length > 0) {
+          this.productsList = result.products;
         }
 
       }, () => {

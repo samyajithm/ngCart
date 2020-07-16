@@ -40,7 +40,7 @@ export class CartPopoverComponentView implements OnInit, OnDestroy {
   /* Fetch the latest value of productsList
   *  map the productList with cartList to get the product details of items in cart
   *  For reduced memory usage CartList will have minimal data as it is stored in sessionStorage
-  *  Example: cartList in sessionStorage: [{id:1, quantity:1},{id:2, quantity:3}]
+  *  Example: cartList in sessionStorage: [{_id:1, quantity:1},{_id:2, quantity:3}]
   * */
   cartInit() {
     this.productListSubscription = this.ngCartService.getProductList()
@@ -51,7 +51,7 @@ export class CartPopoverComponentView implements OnInit, OnDestroy {
         this.cartList.forEach((item) => {
 
           /* Filtering out the details of the cart items from productList */
-          let filteredItem: any = this.utilitiesService.filterBy(item.id, this.productsList, 'id')[0];
+          let filteredItem: any = this.utilitiesService.filterBy(item._id, this.productsList, '_id')[0];
           if (filteredItem) {
             filteredItem.quantityInCart = item.quantity;
             this.productsInCart.push(filteredItem);

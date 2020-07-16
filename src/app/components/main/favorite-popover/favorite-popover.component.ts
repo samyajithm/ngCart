@@ -33,7 +33,7 @@ export class FavoritePopoverComponent implements OnInit {
   /* Fetch the latest value of productsList
  *  map the productList with favoriteList to get the product details of items in Wish List
  *  For reduced memory usage favoriteList will have minimal data as it is stored in sessionStorage
- *  Example: favoriteList in sessionStorage: [1,2,3] -> all the id's of products
+ *  Example: favoriteList in sessionStorage: [1,2,3] -> all the _id's of products
  * */
   favoriteInit() {
     this.productListSubscription = this.ngCartService.getProductList()
@@ -44,7 +44,7 @@ export class FavoritePopoverComponent implements OnInit {
         this.favoriteList.forEach((id) => {
 
           /* Filtering out the details of the cart items from productList */
-          let filteredItem: any = this.utilitiesService.filterBy(id, this.productsList, 'id')[0];
+          let filteredItem: any = this.utilitiesService.filterBy(id, this.productsList, '_id')[0];
           if (filteredItem) {
             this.productsInFavorite.push(filteredItem);
           }

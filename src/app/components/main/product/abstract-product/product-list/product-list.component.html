@@ -1,7 +1,8 @@
 <mat-list-item class="margin-top-10" *ngFor="let product of productList">
   <div>
     <div class="float-left">
-      <img mat-card-sm-image [src]="getSanitizedImg(product.image)" alt="{{'altphoto' | translate}} {{product?.name}}">
+      <!--<img mat-card-sm-image [src]="getSanitizedImg(product.image)" alt="{{'altphoto' | translate}} {{product?.name}}">-->
+      <img mat-card-sm-image src="./assets/images/dummy.jpg" alt="{{'altphoto' | translate}} {{product?.name}}">
     </div>
     <div class="float-left margin-left-20 margin-right-20">
       <h4 mat-line class="font-weight-light ellipsis-truncate margin-bottom-0">{{product.name}}</h4>

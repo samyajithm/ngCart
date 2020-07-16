@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from "rxjs/index";
+import {environment} from "../../../environments/environment";
 
 @Injectable()
 export class NgCartService {
@@ -8,13 +9,14 @@ export class NgCartService {
   productList = new BehaviorSubject<any>([]);
   cartList = new BehaviorSubject<any>(this.getStoredList('cartList'));
   favoriteList = new BehaviorSubject<any>(this.getStoredList('favoriteList'));
+  serverUrl = environment.server ? environment.server : '';
 
   constructor(public http: HttpClient) {
   }
 
   /* Fetch product from api or url */
   getProducts() {
-    const url = 'https://www.mocky.io/v2/5eda4003330000740079ea60';
+    const url = this.serverUrl + '/products';
     return this.http.get(url);
   }
 

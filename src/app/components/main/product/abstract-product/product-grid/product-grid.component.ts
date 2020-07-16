@@ -37,7 +37,7 @@ export class ProductGridComponent extends AbstractProductComponent implements On
   *  Calls function from extended class
   * */
   productInit() {
-    this.isFavorite = this.isProductFavorite(this.product.id);
+    this.isFavorite = this.isProductFavorite(this.product._id);
   }
 
   /*

@@ -17,6 +17,7 @@
   position: relative;
   /* calculate remaining screenSize for main*/
   min-height: calc(100% - #{map_get($height, footer)} - #{map_get($height, toolbar)});
+  width: 100%;
   background-color: white;
   display: flex;
 }

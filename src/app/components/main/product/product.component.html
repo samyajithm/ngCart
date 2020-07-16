@@ -2,6 +2,9 @@
   <div class="product-div col" *ngFor="let product of latestProductList | async">
     <app-product-grid [product]="product"></app-product-grid>
   </div>
+  <div class="p-5 row" *ngIf="productsList?.length <= 0">
+    {{'noRecord' | translate}}
+  </div>
 </ng-container>
 
 <ng-container *ngIf="!gridView">

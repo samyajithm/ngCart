@@ -1,5 +1,5 @@
 export interface Product {
-  id: number;
+  _id: number;
   name: string;
   description: string;
   price: string;
@@ -8,7 +8,8 @@ export interface Product {
 }
 
 export interface ProductResponse {
-  data: Array<Product>;
+  count: Number,
+  products: Array<Product>;
 }
 
 export interface snackBarData {
