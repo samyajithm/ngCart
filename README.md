@@ -17,7 +17,7 @@ A simple E-Commerce Angular 8 application
   * Home page with list of products.
   * Add items to Cart.
   * Hover over cart icon to view items in the cart.
-  * Each item in quart will have a subtotal and grand total. On clicking checkout a mock of successful order is shown.
+  * Each item in cart will have a subtotal and grand total. On clicking checkout a mock of successful order is shown.
   * Cart icon show a badge with number of items in cart.
   * Mark items as Favorite.
   * Hover over Favorite icon to view wish list in a popover.
@@ -27,6 +27,28 @@ A simple E-Commerce Angular 8 application
   * 'Quantity' key is considered as max number of quantity a product can be added to cart. A info toaster will be shown when it exceeds the limit and the product will not be added to cart.
   * State is maintained after the refresh.
 
+## Backend connection
+  * Navigate to `environment.ts | environment.prod.ts` accordingly
+  * Change the value of the server to instance uri of backend application
+      * To run the backend app locally, clone the node.js app from [repo](https://github.com/samyajithm/ngShop.git) and follow the steps from Readme.md
+      
+      Sample server value in `environment` file
+      ```typescript
+        export const environment = {
+          production: false,
+          server: "http://localhost:3000"
+        };         
+      ```  
+      * To connect to backend app hoisted in glitch online server (http://ngshop.glitch.me/products)
+      
+      Sample server value in `environment` file
+      ```typescript
+        export const environment = {
+          production: false,
+          server: "https://ngShop.glitch.me"
+        };         
+      ```  
+      
 ## Development server
 
 * Navigate to `\ngCart` and Run `npm install`.
@@ -36,3 +58,7 @@ A simple E-Commerce Angular 8 application
 ## Demo 
 
 [Demo](https://samyajithm.github.io/ngCart/shop)
+
+**Note**: [Demo](https://samyajithm.github.io/ngCart/shop) instance is connected to node.js app hoisted in (http://ngshop.glitch.me) and MongoDb hoisted in MongoDB atlas.
+
+[POSTMAN COLLECTION](https://documenter.getpostman.com/view/11998783/T1DiGg6m)
